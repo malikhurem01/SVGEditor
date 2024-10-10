@@ -1,5 +1,7 @@
+import RectangleSVG from "./components/Rectangle/Rectangle";
+
 const App = () => {
-  return <h1>Hello World</h1>;
+  return <RectangleSVG />;
 };
 
 export default App;
