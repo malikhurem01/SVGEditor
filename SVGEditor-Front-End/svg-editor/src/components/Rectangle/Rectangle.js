@@ -3,20 +3,12 @@ import SVG from "./SVG";
 
 const RectangleSVG = () => {
   const [isClicked, setIsClicked] = useState(false);
-  const handleRectangleClick = () => {
+  const handleClick = () => {
     //toggle rectangle click
     setIsClicked((prevState) => !prevState);
   };
-  const handleResizeCircleClick = () => {
-    console.log("Circle clicked");
-  };
-  return (
-    <SVG
-      clicked={isClicked}
-      handleRectangleClick={handleRectangleClick}
-      handleResizeCircleClick={handleResizeCircleClick}
-    />
-  );
+
+  return <SVG clicked={isClicked} handleRectangleClick={handleClick} />;
 };
 
 export default RectangleSVG;

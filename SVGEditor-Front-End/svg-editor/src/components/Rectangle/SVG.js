@@ -2,7 +2,7 @@ import React from "react";
 import classes from "./Rectangle.module.css";
 import ResizeCircle from "./ResizeCircle";
 
-const SVG = ({ clicked, handleRectangleClick, handleResizeCircleClick }) => {
+const SVG = ({ clicked, handleRectangleClick }) => {
   return (
     <svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
       <rect
@@ -19,19 +19,9 @@ const SVG = ({ clicked, handleRectangleClick, handleResizeCircleClick }) => {
       {clicked && (
         <React.Fragment>
           {/* Circle at the middle of the upper border */}
-          <ResizeCircle
-            type="height"
-            cx="100"
-            cy="50"
-            onClick={handleResizeCircleClick}
-          />
+          <ResizeCircle type="height" cx="100" cy="50" />
           {/* Circle at the middle of the right border */}
-          <ResizeCircle
-            type="width"
-            cx="175"
-            cy="100"
-            onClick={handleResizeCircleClick}
-          />
+          <ResizeCircle type="width" cx="175" cy="100" />
         </React.Fragment>
       )}
     </svg>
