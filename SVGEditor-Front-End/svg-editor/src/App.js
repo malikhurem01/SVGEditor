@@ -1,6 +1,11 @@
+import Container from "./components/Container";
 import Rectangle from "./components/Rectangle/Rectangle";
 const App = () => {
-  return <Rectangle />;
+  return (
+    <Container>
+      <Rectangle />
+    </Container>
+  );
 };
 
 export default App;
