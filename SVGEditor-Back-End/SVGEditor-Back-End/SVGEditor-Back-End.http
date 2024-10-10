@@ -1,0 +1,6 @@
+@SVGEditor_Back_End_HostAddress = http://localhost:5217
+
+GET {{SVGEditor_Back_End_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
