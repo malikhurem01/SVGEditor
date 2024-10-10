@@ -1,6 +1,0 @@
-const INITIAL_CONFIGURATION = {
-  WIDTH: 200,
-  HEIGHT: 450,
-};
-
-export default INITIAL_CONFIGURATION;
