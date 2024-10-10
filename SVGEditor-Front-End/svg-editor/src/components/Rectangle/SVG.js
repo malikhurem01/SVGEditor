@@ -1,29 +1,21 @@
 import React from "react";
 import classes from "./Rectangle.module.css";
-import ResizeCircle from "./ResizeCircle";
 
-const SVG = ({ clicked, handleRectangleClick }) => {
+const SVG = ({ config, handleRectangleClick, children }) => {
   return (
-    <svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+    <svg width="900" height="1000" xmlns="http://www.w3.org/2000/svg">
       <rect
         className={classes.rectangle}
         onClick={handleRectangleClick}
-        width="150"
-        height="100"
-        x="25"
-        y="50"
+        width={config.width}
+        height={config.height}
+        x={config.posX}
+        y={config.posY}
         fill="white"
         stroke="black"
         strokeWidth="1"
       />
-      {clicked && (
-        <React.Fragment>
-          {/* Circle at the middle of the upper border */}
-          <ResizeCircle type="height" cx="100" cy="50" />
-          {/* Circle at the middle of the right border */}
-          <ResizeCircle type="width" cx="175" cy="100" />
-        </React.Fragment>
-      )}
+      {children}
     </svg>
   );
 };
