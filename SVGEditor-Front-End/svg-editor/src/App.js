@@ -1,7 +1,6 @@
-import RectangleSVG from "./components/Rectangle/Rectangle";
-
+import Rectangle from "./components/Rectangle/Rectangle";
 const App = () => {
-  return <RectangleSVG />;
+  return <Rectangle />;
 };
 
 export default App;
