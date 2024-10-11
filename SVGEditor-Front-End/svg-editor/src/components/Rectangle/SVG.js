@@ -14,8 +14,8 @@ const SVG = ({
   return (
     <React.Fragment>
       <svg
-        width="97%"
-        height="90%"
+        width="95%"
+        height="100%"
         onMouseMove={handleMouseMove}
         onMouseUp={handleMouseUp}
       >

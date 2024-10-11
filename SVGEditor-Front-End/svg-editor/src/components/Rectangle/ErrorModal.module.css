@@ -1,0 +1,42 @@
+.backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.632);
+  height: 100vh;
+  width: 100%;
+}
+
+.modal {
+  border-radius: 10px;
+  padding: 15px;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 250px;
+  min-height: 190px;
+  padding-bottom: 10px;
+  background-color: #fff;
+  z-index: 1000;
+}
+
+.modal h4 {
+  border-bottom: 2px solid #1d1c1c;
+  padding: 5px;
+  margin-bottom: 15px;
+}
+
+.closeModal {
+  margin-top: 25px;
+  height: 50px;
+  width: 100%;
+  background-color: rgb(0, 0, 0);
+  color: #fff;
+  font-size: 16px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}

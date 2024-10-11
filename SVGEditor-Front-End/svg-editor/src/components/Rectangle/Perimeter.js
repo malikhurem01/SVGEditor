@@ -13,14 +13,13 @@ const Perimeter = ({ x, y, width, height }) => {
       >
         {width}px
       </text>
-      {/* Dynamic height on the left side */}
       <text
         x={x - 35} // Place it left of the rectangle
         y={y + height / 2} // Center the text vertically on the left side
         textAnchor="middle"
         fontSize="16"
         fill="black"
-        transform={`rotate(-90, ${x - 35}, ${y + height / 2})`} // Rotate text to display vertically
+        transform={`rotate(-90, ${x - 35}, ${y + height / 2})`} // Rotate
       >
         {height}px
       </text>
@@ -31,9 +30,8 @@ const Perimeter = ({ x, y, width, height }) => {
         y2={y - 25}
         stroke="black"
         strokeWidth="2"
-        markerEnd="url(#arrowhead)" // Add arrowhead
+        markerEnd="url(#arrowhead)"
       />
-      {/* North-South Arrow (vertical line) */}
       <line
         x1={x - 25} // A bit to the left of the rectangle to be visible under the height text
         y1={y}
@@ -43,7 +41,6 @@ const Perimeter = ({ x, y, width, height }) => {
         strokeWidth="2"
         markerEnd="url(#arrowhead)" // Add arrowhead
       />
-      {/* Define arrowhead marker */}
       <defs>
         <marker
           id="arrowhead"
