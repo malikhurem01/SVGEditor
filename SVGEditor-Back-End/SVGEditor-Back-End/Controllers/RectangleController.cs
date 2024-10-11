@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SVGEditor_Back_End.DTOs;
+using SVGEditor_Back_End.Models;
 using SVGEditor_Back_End.Services;
 
 namespace SVGEditor_Back_End.Controllers
@@ -8,22 +9,22 @@ namespace SVGEditor_Back_End.Controllers
     [Route("api/[controller]")]
     public class RectangleController : Controller
     {
-        private readonly IConfigurationService _configurationService;
-        public RectangleController(IConfigurationService configurationService)
+        private readonly IRectangleService _rectangleService;
+        public RectangleController(IRectangleService rectangleService)
         {
-            _configurationService = configurationService;
+            _rectangleService = rectangleService;
         }
 
-        [HttpGet]
-        public ActionResult<GetRectangleSettings> Get() {
-         return Ok(_configurationService.GetRectangleSettings());
+        [HttpGet("dimensions")]
+        public ActionResult<ServiceResponse<GetRectangleSettingsDto>> Get() {
+         return Ok(_rectangleService.GetRectangleSettings());
         }
 
-        [HttpPatch]
-        public async Task<ActionResult<string>> ModifyRectangle(PatchRectangleSettings settings, CancellationToken cancellationToken)
+        [HttpPut("modify")]
+        public async Task<ActionResult<ServiceResponse<string>>> ModifyRectangle(ModifyRectangleSettingsDto settings, CancellationToken cancellationToken)
         {
             cancellationToken.ThrowIfCancellationRequested();
-            return Ok(await _configurationService.ModifyRectangleSettings(settings));
+            return Ok(await _rectangleService.ModifyRectangleSettings(settings));
         }
     }
 }
