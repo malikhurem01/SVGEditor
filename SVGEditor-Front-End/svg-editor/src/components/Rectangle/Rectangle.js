@@ -89,9 +89,22 @@ const Rectangle = () => {
         //Do not throw exception on FRONT-END if the error is from cancellation
         if (err.code === "ERR_CANCELED") {
           return;
+        } else if (err.code === "ERR_CONNECTION_REFUSED") {
+          setIsValidating(false);
+          setResizeState({
+            error: true,
+            message: "Server error. Please, try again later.",
+          });
+        } else if (err.status === 400) {
+          setIsValidating(false);
+          setResizeState({ error: true, message: err.response.data.message });
+        } else {
+          setIsValidating(false);
+          setResizeState({
+            error: true,
+            message: "Server error. Please, try again later.",
+          });
         }
-        setIsValidating(false);
-        setResizeState({ error: true, message: err.response.data.message });
       });
   };
 
